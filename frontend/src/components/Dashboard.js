@@ -175,7 +175,7 @@ const Dashboard = () => {
               {topQuarters.map((quarter) => (
                 <Typography key={quarter.Quarter_ID} variant="body1">
                   {`Quarter ${quarter.Quarter_ID}: ${quarter.Avg_Charge.toFixed(
-                    2
+                    0
                   )} Rs`}
                 </Typography>
               ))}
@@ -198,7 +198,7 @@ const Dashboard = () => {
               </Select>
               {selectedQuarterAvgCharge && (
                 <Typography variant="body1" sx={{ marginTop: 1 }}>
-                  Avg Monthly Charge: {selectedQuarterAvgCharge.toFixed(2)}
+                  Avg Monthly Charge: {selectedQuarterAvgCharge.toFixed(0)}
                 </Typography>
               )}
             </Paper>
