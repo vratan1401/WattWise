@@ -18,12 +18,12 @@ const Home = () => {
         }}
       >
         <img
-          src="/img1.jpeg"
+          src="/map.jpeg"
           alt="Image 1"
           style={{ width: "400px", maxWidth: "50%", marginRight: "30px" }}
         />
         <img
-          src="/img2.jpeg"
+          src="/img1.jpeg"
           alt="Image 2"
           style={{ width: "400px", maxWidth: "50%", marginRight: "30px" }}
         />
@@ -57,7 +57,7 @@ const Home = () => {
           variant="body1"
           sx={{ marginBottom: "1rem", maxWidth: "100%", maxHeight: "100%" }}
         >
-          Introducing "WattWise" – your go-to energy dashboard for BITS Goa.
+          Introducing "WattWise" - your go-to energy dashboard for BITS Goa.
           With WattWise, you can easily track how much energy we're using across
           campus. It helps everyone at BITS Goa save energy and keep our campus
           green. Let's make BITS Goa brighter and more sustainable together with
