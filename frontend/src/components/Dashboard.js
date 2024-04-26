@@ -137,75 +137,100 @@ const Dashboard = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h3" sx={{ marginY: 2 }}>
-        LWE Analytics
-      </Typography>
-      {loading ? (
-        <CircularProgress />
-      ) : (
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ padding: 2 }}>
-              <Typography variant="h6">
-                Month on Month Trend of Total Charge
-              </Typography>
-              <Line data={lineChartData1} />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ padding: 2 }}>
-              <Typography variant="h6">
-                Quarter Distribution of Avg Charge
-              </Typography>
-              <Bar data={generateHistogramData()} />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ padding: 2 }}>
-              <Typography variant="h6">%Split of Total Charge</Typography>
-              <Line data={lineChartData2} />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ padding: 2 }}>
-              <Typography variant="h6">
-                Top 11 Avg Monthly Charge Quarters
-              </Typography>
-              {topQuarters.map((quarter) => (
-                <Typography key={quarter.Quarter_ID} variant="body1">
-                  {`Quarter ${quarter.Quarter_ID}: ${quarter.Avg_Charge.toFixed(
-                    0
-                  )} Rs`}
+    <div>
+      <Container
+        sx={{
+          background: "linear-gradient(to bottom, #8dd06c, rgb(96, 209, 196))",
+          minWidth: "100%",
+          minHeight: "100vh",
+          paddingBottom: "20px",
+        }}
+      >
+        <Typography variant="h3" sx={{ marginY: 0, paddingY: 3 }}>
+          LWE Analytics
+        </Typography>
+        {loading ? (
+          <CircularProgress />
+        ) : (
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6}>
+              <Paper sx={{ padding: 2 }}>
+                <Typography variant="h6">
+                  Month on Month Trend of Total Charge
                 </Typography>
-              ))}
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ padding: 2 }}>
-              <Typography variant="h6">Select Quarter</Typography>
-              <Select
-                fullWidth
-                value={selectedQuarter}
-                onChange={handleQuarterChange}
-              >
-                {quarterMetricData.map((quarter) => (
-                  <MenuItem
-                    key={quarter.Quarter_ID}
-                    value={quarter.Quarter_ID}
-                  >{`Quarter ${quarter.Quarter_ID}`}</MenuItem>
+                <Line data={lineChartData1} />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Paper sx={{ padding: 2 }}>
+                <Typography variant="h6">
+                  Quarter Distribution of Avg Charge
+                </Typography>
+                <Bar data={generateHistogramData()} />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Paper sx={{ padding: 2 }}>
+                <Typography variant="h6">%Split of Total Charge</Typography>
+                <Line data={lineChartData2} />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Paper sx={{ padding: 2 }}>
+                <Typography variant="h6">
+                  Top 11 Avg Monthly Charge Quarters
+                </Typography>
+                {topQuarters.map((quarter) => (
+                  <Typography key={quarter.Quarter_ID} variant="body1">
+                    {`Quarter ${
+                      quarter.Quarter_ID
+                    }: ${quarter.Avg_Charge.toFixed(0)} Rs`}
+                  </Typography>
                 ))}
-              </Select>
-              {selectedQuarterAvgCharge && (
-                <Typography variant="body1" sx={{ marginTop: 1 }}>
-                  Avg Monthly Charge: {selectedQuarterAvgCharge.toFixed(0)}
-                </Typography>
-              )}
-            </Paper>
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Paper sx={{ padding: 2 }}>
+                <Typography variant="h6">Select Quarter</Typography>
+                <Select
+                  fullWidth
+                  value={selectedQuarter}
+                  onChange={handleQuarterChange}
+                >
+                  {quarterMetricData.map((quarter) => (
+                    <MenuItem
+                      key={quarter.Quarter_ID}
+                      value={quarter.Quarter_ID}
+                    >{`Quarter ${quarter.Quarter_ID}`}</MenuItem>
+                  ))}
+                </Select>
+                {selectedQuarterAvgCharge && (
+                  <Typography variant="body1" sx={{ marginTop: 1 }}>
+                    Avg Monthly Charge: {selectedQuarterAvgCharge.toFixed(0)}
+                  </Typography>
+                )}
+              </Paper>
+            </Grid>
           </Grid>
-        </Grid>
-      )}
-    </Container>
+        )}
+      </Container>
+      <footer style={{ backgroundColor: "#8DD06C", padding: "20px" }}>
+        <Container maxWidth="md">
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={12} sm={6}>
+              <Typography variant="body1" align="center">
+                Email: mkd@goa.bits-pilani.ac.in
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="body1" align="center">
+                Contact Number: +91 942 239 0888
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
+      </footer>
+    </div>
   );
 };
 

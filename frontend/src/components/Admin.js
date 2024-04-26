@@ -78,44 +78,55 @@ const Admin = () => {
   };
 
   return (
-    <Container maxWidth="sm" style={styles.container}>
-      <Typography variant="h2" gutterBottom>
-        Welcome to Admin Centre
-      </Typography>
-      <Paper elevation={3} style={styles.paper}>
-        <Typography variant="h4" style={styles.header}>
-          Latest LWE Bill Excel File
+    <div
+      style={{
+        align: "center",
+        background: "linear-gradient(to bottom, #8dd06c, rgb(96, 209, 196))",
+        padding: "20px",
+        maxHeight: "100vh",
+        height: "100vh",
+        textAlign: "center",
+      }}
+    >
+      <Container maxWidth="sm" style={styles.container}>
+        <Typography variant="h2" gutterBottom>
+          Admin Centre
         </Typography>
-        <Typography variant="subtitle1" style={styles.header}>
-          Wait 30s after upload for changes to be seen in Dashboard
-        </Typography>
+        <Paper elevation={3} style={styles.paper}>
+          <Typography variant="h4" style={styles.header}>
+            Latest LWE Bill Excel File
+          </Typography>
+          <Typography variant="subtitle1" style={styles.header}>
+            Wait 30s after upload for changes to be seen in Dashboard
+          </Typography>
 
-        <input
-          type="file"
-          accept=".xls,.xlsx"
-          onChange={handleFileUpload}
-          style={styles.input}
-        />
-        {uploadError && (
-          <Alert severity="error" style={styles.alert}>
-            {uploadError}
-          </Alert>
-        )}
-        {uploadSuccess && (
-          <Alert severity="success" style={styles.alert}>
-            File Uploaded. Changes made to Dashboard!
-          </Alert>
-        )}
-        <Button
-          variant="contained"
-          style={styles.button}
-          onClick={handleDataUpload}
-          disabled={uploading}
-        >
-          {uploading ? "Uploading..." : "Upload File"}
-        </Button>
-      </Paper>
-    </Container>
+          <input
+            type="file"
+            accept=".xls,.xlsx"
+            onChange={handleFileUpload}
+            style={styles.input}
+          />
+          {uploadError && (
+            <Alert severity="error" style={styles.alert}>
+              {uploadError}
+            </Alert>
+          )}
+          {uploadSuccess && (
+            <Alert severity="success" style={styles.alert}>
+              File Uploaded. Changes made to Dashboard!
+            </Alert>
+          )}
+          <Button
+            variant="contained"
+            style={styles.button}
+            onClick={handleDataUpload}
+            disabled={uploading}
+          >
+            {uploading ? "Uploading..." : "Upload File"}
+          </Button>
+        </Paper>
+      </Container>
+    </div>
   );
 };
 

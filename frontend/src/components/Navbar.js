@@ -23,6 +23,7 @@ const Navbar = ({ decodedToken, setDecodedToken, adminUsers }) => {
         alignItems: "center",
         backgroundColor: "#333",
         padding: "10px 20px",
+        marginBottom: "0px",
       }}
     >
       <div>
