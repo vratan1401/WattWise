@@ -1,61 +1,46 @@
 import React from "react";
-import { Typography, Container, Button, Grid, TextField } from "@mui/material";
+import { Typography, Container, Button, Grid } from "@mui/material";
 
 const Home = () => {
   return (
     <div
       style={{
-        background: "linear-gradient(to bottom, #8dd06c, rgb(96, 209, 196))",
-        minHeight: "100vh",
+        background: "#12486B",
+        minHeight: "95vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 0, // Remove padding
+        margin: 0, // Remove margin
+        color: "#F5FCCD",
+        position: "relative",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginBottom: "30px",
-          padding: "20px",
-        }}
-      >
-        <img
-          src="/map.jpeg"
-          alt="Image 1"
-          style={{ width: "400px", maxWidth: "50%", marginRight: "30px" }}
-        />
-        <img
-          src="/img1.jpeg"
-          alt="Image 2"
-          style={{ width: "400px", maxWidth: "50%", marginRight: "30px" }}
-        />
-        <img
-          src="/img3.jpeg"
-          alt="Image 3"
-          style={{ width: "400px", maxWidth: "50%", marginRight: "30px" }}
-        />
-      </div>
       <Container
         sx={{
-          bgcolor: "rgb(96,209,196)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "50vh",
-          textAlign: "center",
+          bgcolor: "#78D6C6",
           borderRadius: "20px",
+          padding: "40px",
+          textAlign: "center",
           boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)",
-          // margin: "1rem auto",
-          width: "600px",
-          padding: "20px 0px",
-          height: "300px",
+          marginBottom: "20px",
         }}
       >
-        <Typography variant="h3" sx={{ marginBottom: "1rem", marginTop: 0 }}>
+        <Typography
+          variant="h3"
+          sx={{
+            fontFamily: "Open Sans",
+            fontWeight: "600",
+            marginBottom: "20px",
+            color: "#12486B",
+          }}
+        >
           Welcome to WattWise
         </Typography>
         <Typography
           variant="body1"
-          sx={{ marginBottom: "1rem", maxWidth: "100%", maxHeight: "100%" }}
+          sx={{ marginBottom: "20px", opacity: 0.9, color: "black" }}
         >
           Introducing "WattWise" - your go-to energy dashboard for BITS Goa.
           With WattWise, you can easily track how much energy we're using across
@@ -63,20 +48,38 @@ const Home = () => {
           green. Let's make BITS Goa brighter and more sustainable together with
           WattWise!
         </Typography>
+
         <Button
           variant="contained"
           color="primary"
           href="/dashboard"
-          sx={{ borderRadius: "999px", marginTop: "1rem" }}
+          sx={{
+            borderRadius: "12px",
+            padding: "12px 24px",
+            fontWeight: 600,
+            fontSize: "1rem",
+            letterSpacing: "0.5px",
+            textTransform: "uppercase",
+            bgcolor: "#12486B",
+            color: "#F5FCCD",
+            "&:hover": {
+              bgcolor: "#58BFA0",
+            },
+          }}
         >
           Get Started
         </Button>
       </Container>
       <footer
         style={{
-          backgroundColor: "#8DD06C",
+          backgroundColor: "#419197",
           padding: "20px",
-          marginTop: "20px",
+          color: "#F5FCCD",
+          width: "100%",
+          textAlign: "center",
+          position: "absolute",
+          bottom: 0,
+          left: 0,
         }}
       >
         <Container maxWidth="md">

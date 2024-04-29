@@ -39,10 +39,11 @@ const Login = ({ setDecodedToken }) => {
     <div
       style={{
         align: "center",
-        background: "linear-gradient(to bottom, #8dd06c, rgb(96, 209, 196))",
+        background: "#12486B",
         padding: "20px",
-        maxHeight: "100vh",
-        height: "100vh",
+        paddingBottom: "10px",
+        minHeight: "95vh",
+        // height: "10vh",
         textAlign: "center",
       }}
     >
@@ -50,7 +51,7 @@ const Login = ({ setDecodedToken }) => {
         maxWidth="sm"
         sx={{
           alignContent: "center",
-          backgroundColor: "#f0f0f0",
+          // backgroundColor: "#f0f0f0",
           padding: "0 !important",
           borderRadius: "20px",
           boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)",
@@ -58,19 +59,36 @@ const Login = ({ setDecodedToken }) => {
       >
         <Paper
           sx={{
-            padding: "2px 0px 2px 0px",
+            background: "#78D6C6",
+            padding: "1rem",
             textAlign: "center",
-            padding: "10px !important",
+            borderRadius: "20px",
           }}
         >
-          <Typography variant="h3" gutterBottom>
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{
+              fontFamily: "Open Sans",
+              fontWeight: "600",
+              color: "#12486B",
+            }}
+          >
             Login
           </Typography>
-          <Typography variant="body1" paragraph>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ fontFamily: "Open Sans" }}
+          >
             Please log in using your BITS Goa email account. Only BITS Goa email
             accounts are allowed for general access.
           </Typography>
-          <Typography variant="body1" paragraph>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ fontFamily: "Open Sans" }}
+          >
             If you require access to the admin page, please use your registered
             admin email address.
           </Typography>
@@ -102,22 +120,6 @@ const Login = ({ setDecodedToken }) => {
           </Box>
         </Paper>
       </Container>
-      {/* <footer style={{ backgroundColor: "#8DD06C", padding: "20px",position: "absolute", bottom: 0,left:0, maxWidth: "100%", width: "100%"  }}>
-  <Container maxWidth="md">
-    <Grid container spacing={2} justifyContent="center">
-      <Grid item xs={12} sm={6}>
-        <Typography variant="body1" align="center">
-          Email: example@example.com
-        </Typography>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <Typography variant="body1" align="center">
-          Contact Number: +1 234 567 890
-        </Typography>
-      </Grid>
-    </Grid>
-  </Container>
-</footer> */}
     </div>
   );
 };

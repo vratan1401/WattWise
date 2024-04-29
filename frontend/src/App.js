@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
-import Navbar from "./components/Navbar";
+import CustomNavbar from "./components/CustomNavbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Admin from "./components/Admin";
@@ -65,7 +65,7 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Navbar
+        <CustomNavbar
           decodedToken={decodedToken}
           setDecodedToken={setDecodedToken}
           adminUsers={adminUsers}

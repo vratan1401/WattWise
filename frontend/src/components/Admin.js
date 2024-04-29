@@ -50,17 +50,20 @@ const Admin = () => {
     },
     header: {
       marginBottom: "1rem",
+      fontFamily: "Open Sans",
+      fontWeight: "600",
+      color: "#12486B",
     },
     input: {
       display: "block", // Display the input on a new line
-      border: "1px solid #ccc",
+      border: "2px solid #12486B",
       borderRadius: "0.25rem",
       padding: "0.5rem",
       marginBottom: "1rem",
     },
     button: {
-      backgroundColor: "#4caf50", // Changed color to green
-      color: "white",
+      backgroundColor: "#12486B", // Changed color to match Home.js
+      color: "#F5FCCD", // Changed text color to match Home.js
       padding: "0.5rem 2rem",
       borderRadius: "0.25rem",
       cursor: "pointer",
@@ -68,9 +71,12 @@ const Admin = () => {
       textDecoration: "none",
       transition: "background-color 0.3s",
       marginTop: "0.25rem", // Reduced margin
+      fontWeight: "600",
     },
     paper: {
       padding: "1.5rem", // Reduced padding
+      backgroundColor: "#78D6C6", // Changed background color to match Home.js
+      borderRadius: "20px",
     },
     alert: {
       marginBottom: "1rem", // Reduced margin
@@ -81,7 +87,7 @@ const Admin = () => {
     <div
       style={{
         align: "center",
-        background: "linear-gradient(to bottom, #8dd06c, rgb(96, 209, 196))",
+        background: "#12486B", // Changed background color to match Home.js
         padding: "20px",
         maxHeight: "100vh",
         height: "100vh",
@@ -89,14 +95,21 @@ const Admin = () => {
       }}
     >
       <Container maxWidth="sm" style={styles.container}>
-        <Typography variant="h2" gutterBottom>
+        <Typography variant="h2" gutterBottom style={{ color: "#F5FCCD" }}>
           Admin Centre
         </Typography>
         <Paper elevation={3} style={styles.paper}>
           <Typography variant="h4" style={styles.header}>
             Latest LWE Bill Excel File
           </Typography>
-          <Typography variant="subtitle1" style={styles.header}>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              marginBottom: "1rem",
+              fontFamily: "Open Sans",
+              color: "black",
+            }}
+          >
             Wait 30s after upload for changes to be seen in Dashboard
           </Typography>
 

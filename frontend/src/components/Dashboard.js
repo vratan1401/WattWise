@@ -52,7 +52,7 @@ const Dashboard = () => {
     );
   };
 
-  const topQuarters = quarterMetricData.slice(0, 11);
+  const topQuarters = quarterMetricData.slice(0, 10);
 
   const lineChartData1 = {
     labels: monthMetricData.map((item) => item.Month),
@@ -140,13 +140,16 @@ const Dashboard = () => {
     <div>
       <Container
         sx={{
-          background: "linear-gradient(to bottom, #8dd06c, rgb(96, 209, 196))",
+          background: "#12486B",
           minWidth: "100%",
           minHeight: "100vh",
           paddingBottom: "20px",
         }}
       >
-        <Typography variant="h3" sx={{ marginY: 0, paddingY: 3 }}>
+        <Typography
+          variant="h3"
+          sx={{ marginY: 0, paddingY: 3, color: "#F5FCCD" }}
+        >
           LWE Analytics
         </Typography>
         {loading ? (
@@ -154,15 +157,16 @@ const Dashboard = () => {
         ) : (
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
-              <Paper sx={{ padding: 2 }}>
+              <Paper sx={{ padding: 2, filter: "invert(1)" }}>
                 <Typography variant="h6">
                   Month on Month Trend of Total Charge
                 </Typography>
                 <Line data={lineChartData1} />
               </Paper>
             </Grid>
+
             <Grid item xs={12} md={6}>
-              <Paper sx={{ padding: 2 }}>
+              <Paper sx={{ padding: 2, filter: "invert(1)" }}>
                 <Typography variant="h6">
                   Quarter Distribution of Avg Charge
                 </Typography>
@@ -170,15 +174,15 @@ const Dashboard = () => {
               </Paper>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Paper sx={{ padding: 2 }}>
+              <Paper sx={{ padding: 2, filter: "invert(1)" }}>
                 <Typography variant="h6">%Split of Total Charge</Typography>
                 <Line data={lineChartData2} />
               </Paper>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Paper sx={{ padding: 2 }}>
+              <Paper sx={{ padding: 2, filter: "invert(1)" }}>
                 <Typography variant="h6">
-                  Top 11 Avg Monthly Charge Quarters
+                  Top 10 Avg Monthly Charge Quarters
                 </Typography>
                 {topQuarters.map((quarter) => (
                   <Typography key={quarter.Quarter_ID} variant="body1">
@@ -190,7 +194,7 @@ const Dashboard = () => {
               </Paper>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Paper sx={{ padding: 2 }}>
+              <Paper sx={{ padding: 2, filter: "invert(1)" }}>
                 <Typography variant="h6">Select Quarter</Typography>
                 <Select
                   fullWidth
@@ -214,7 +218,13 @@ const Dashboard = () => {
           </Grid>
         )}
       </Container>
-      <footer style={{ backgroundColor: "#8DD06C", padding: "20px" }}>
+      <footer
+        style={{
+          backgroundColor: "#419197",
+          padding: "20px",
+          color: "#F5FCCD",
+        }}
+      >
         <Container maxWidth="md">
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} sm={6}>
