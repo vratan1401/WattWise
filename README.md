@@ -40,3 +40,16 @@ To update the local repo to current master branch code run:
 git checkout master
 git pull origin master
 This should get you the most recent state of the project on your computer
+
+Steps to Run Code
+
+1. Open a terminal for the backend server and run:
+   cd .\Backend\
+   pipenv install
+   pipenv shell
+   cd .\backend\
+   python manage.py runserver
+2. Open a terminal for the frontend server and run:
+   cd .\frontend\
+   npm install
+   npm start
